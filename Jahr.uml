@@ -7,8 +7,8 @@ File4=Tag.java
 File5=Termin.java
 
 [Box:  - Jahr]
-X=1294
-Y=40
+X=1325
+Y=44
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -17,8 +17,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Liste]
-X=723
-Y=40
+X=729
+Y=251
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -27,8 +27,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Monat]
-X=1110
-Y=40
+X=1120
+Y=45
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -79,6 +79,20 @@ Fontname=MS Sans Serif
 Fontsize=10
 ShowObjectDiagram=0
 
+[Connections]
+V0=Jahr#Monat#Aggregation####0#0#0
+V1=Liste#Node#AssociationDirected####0#0#0
+V2=Monat#Tag#Aggregation####0#0#0
+V3=Node#Termin#AssociationDirected####0#0#0
+V4=Node#Node#AssociationDirected####1#0#0
+V5=Tag#Liste#AssociationDirected####0#0#0
+
 [Interactive]
 I0=
+
+[Window]
+Left=75
+Top=75
+Width=1425
+Height=375
 

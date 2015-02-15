@@ -35,12 +35,16 @@ Fontname=MS Sans Serif
 Fontsize=10
 ShowObjectDiagram=0
 
+[Connections]
+V0=Node#Termin#AssociationDirected####0#0#0
+V1=Node#Node#AssociationDirected####1#0#0
+
 [Interactive]
 I0=
 
 [Window]
-Left=22
-Top=29
-Width=726
-Height=182
+Left=100
+Top=100
+Width=1425
+Height=375
 

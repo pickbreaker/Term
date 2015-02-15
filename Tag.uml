@@ -5,8 +5,8 @@ File2=Tag.java
 File3=Termin.java
 
 [Box:  - Liste]
-X=723
-Y=40
+X=789
+Y=39
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -25,8 +25,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Tag]
-X=914
-Y=40
+X=1125
+Y=33
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -47,7 +47,7 @@ FontName=MS Sans Serif
 [Diagram]
 comments=0
 OffsetX=0
-OffsetY=371
+OffsetY=0
 Visibility=0
 ShowParameter=4
 SortOrder=0
@@ -57,12 +57,18 @@ Fontname=MS Sans Serif
 Fontsize=10
 ShowObjectDiagram=0
 
+[Connections]
+V0=Liste#Node#AssociationDirected####0#0#0
+V1=Node#Termin#AssociationDirected####0#0#0
+V2=Node#Node#AssociationDirected####1#0#0
+V3=Tag#Liste#AssociationDirected####0#0#0
+
 [Interactive]
 I0=
 
 [Window]
-Left=66
-Top=87
-Width=726
-Height=182
+Left=150
+Top=150
+Width=1425
+Height=375
 

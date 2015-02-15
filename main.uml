@@ -1,9 +1,75 @@
 [Files]
-File0=main.java
+File0=Jahr.java
+File1=Liste.java
+File2=main.java
+File3=Monat.java
+File4=Node.java
+File5=Tag.java
+File6=Termin.java
+
+[Box:  - Jahr]
+X=477
+Y=203
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - Liste]
+X=719
+Y=197
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
 
 [Box:  - main]
 X=20
-Y=40
+Y=27
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - Monat]
+X=476
+Y=42
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - Node]
+X=1078
+Y=228
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - Tag]
+X=786
+Y=33
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - Termin]
+X=1372
+Y=162
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -24,6 +90,21 @@ Fontname=MS Sans Serif
 Fontsize=10
 ShowObjectDiagram=0
 
+[Connections]
+V0=Jahr#Monat#Aggregation####0#0#0
+V1=Liste#Node#AssociationDirected####0#0#0
+V2=main#Jahr#Aggregation####0#0#0
+V3=Monat#Tag#Aggregation####0#0#0
+V4=Node#Termin#AssociationDirected####0#0#0
+V5=Node#Node#AssociationDirected####1#0#0
+V6=Tag#Liste#AssociationDirected####0#0#0
+
 [Interactive]
 I0=
+
+[Window]
+Left=0
+Top=0
+Width=1425
+Height=375
 
