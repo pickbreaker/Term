@@ -14,10 +14,12 @@ public class Tag {
   
   // Anfang Methoden
   public Liste getTermine() {
+    //Termine als Liste abfragen
     return Termine;
   }
 
   public void addTermin(Termin term) {
+    //Termin für diesen Taghinzufügen
     Termine.addNode(term,Termine.getFirstNode(),0);
   }
 
@@ -26,6 +28,7 @@ public class Tag {
   }
 
   public void removeTermin(int count) {
+    //Bestimmten Termin aus Liste entfernen
     Termine.deleteNode(count,0,Termine.getFirstNode()); 
   }
 

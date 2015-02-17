@@ -15,7 +15,20 @@ public class Jahr {
   // Ende Attribute
   
   public Jahr() {
-    this.Monate = new Monat[12];
+    //alle 12 Monate intialisieren
+    this.Monate = new Monat[11];
+    Monate[0].setName("Januar");
+    Monate[1].setName("Februar");
+    Monate[2].setName("März");
+    Monate[3].setName("April");
+    Monate[4].setName("Mai");
+    Monate[5].setName("Juni");
+    Monate[6].setName("Juli");
+    Monate[7].setName("August");
+    Monate[8].setName("September");
+    Monate[9].setName("Oktober");
+    Monate[10].setName("November");
+    Monate[11].setName("Dezember");
   }
 
   // Anfang Methoden

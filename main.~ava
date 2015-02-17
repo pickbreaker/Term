@@ -45,6 +45,7 @@ public class main extends Frame implements MouseListener{
     setLayout(null);
     breite = getSize().width;
     hoehe = getSize().height;
+    //leeres Pufferbild definieren
     bild = new BufferedImage(d.width,d.height,BufferedImage.TYPE_INT_RGB);
     MausX = 0;
     MausY = 0;
@@ -55,18 +56,22 @@ public class main extends Frame implements MouseListener{
     setVisible(true);
   } // end of public main
   public void paint(Graphics g){
+    //Puffergrafik laden
     Graphics h = bild.getGraphics();
+    //Hintergrund leeren
     h.setColor(Color.white);
     h.fillRect(0,0,this.getWidth()-1,this.getHeight()-1);
     try{
-      Image img1 = ImageIO.read(new File("C:\\Users\\Benedikt\\Documents\\GitHub\\Term\\Term\\backx.jpg"));
-      Image img2 = ImageIO.read(new File("C:\\Users\\Benedikt\\Documents\\GitHub\\Term\\Term\\next.png"));
-      Image img3 = ImageIO.read(new File("C:\\Users\\Benedikt\\Documents\\GitHub\\Term\\Term\\plus.png"));
-      Image img4 = ImageIO.read(new File("C:\\Users\\Benedikt\\Documents\\GitHub\\Term\\Term\\previous.png"));
+      //externe Grafiken laden
+      Image img1 = ImageIO.read(new File("C:\\Dokumente und Einstellungen\\THG\\Eigene Dateien\\Downloads\\Term-master\\Term-master\\backx.jpg"));
+      Image img2 = ImageIO.read(new File("C:\\Dokumente und Einstellungen\\THG\\Eigene Dateien\\Downloads\\Term-master\\Term-master\\next.png"));
+      Image img3 = ImageIO.read(new File("C:\\Dokumente und Einstellungen\\THG\\Eigene Dateien\\Downloads\\Term-master\\Term-master\\plus.png"));
+      Image img4 = ImageIO.read(new File("C:\\Dokumente und Einstellungen\\THG\\Eigene Dateien\\Downloads\\Term-master\\Term-master\\previous.png"));
       //System.out.println(img1.toString());
       //System.out.println(img2.toString());
       //System.out.println(img3.toString());
       //System.out.println(img4.toString());
+      //Grafik zeichnen
       h.setColor(Color.BLACK);
       h.drawImage(img1,0,10,this.getWidth()-1,this.getHeight()-1,this);
       h.drawImage(img2,250,750,20,20,this);
@@ -83,11 +88,15 @@ public class main extends Frame implements MouseListener{
       h.drawString(MONAT3,585,80);
       h.drawString(MONAT4,785,80);
     }catch (IOException ex){
+      //Ladefehler abfangen
       System.out.println(ex);
     }
-    drawTable(100,100,31,4,h); 
+    //Tabelle zeichnen
+    drawTable(100,100,31,4,h);
+    //Puffergrafik auf Fenster übertragen 
     g.drawImage(bild,0,0,null);
     pause (30);
+    //neu laden
     repaint();      
   }
   public void update (Graphics g){
@@ -101,8 +110,11 @@ public class main extends Frame implements MouseListener{
     
   }
   public void drawTable(int x,int y,int countx,int county,Graphics f){
+    //Für alle Zeilen
     for (int i=0;i<county;i++) {
+      //Für alle Spalten
       for (int j=0;j<countx;j++) {
+        //weißes Kästchen mit schwarzem Rahmen
         f.setColor(Color.WHITE);
         f.fillRect(x+(i*TAB_BREITE),y+(j*TAB_HOEHE),TAB_BREITE,TAB_HOEHE);
         f.setColor(Color.BLACK);
@@ -115,15 +127,19 @@ public class main extends Frame implements MouseListener{
   public void mouseClicked(MouseEvent me){
     int posx = me.getX();
     int posy = me.getY();
-    System.out.println(posx+" x, "+posy+" y.");
+    //Maus geklickt
+    //System.out.println(posx+" x, "+posy+" y.");
     if (posx>248&&posx<272&&posy>748&&posy<772) {
+      //auf den next Button geklickt
       System.out.println("next");
     }else if(posx>198&&posx<222&&posy>748&&posy<772){
+      //auf den plus Button geklickt
       System.out.println("plus");
     }else if(posx>148&&posx<172&&posy>748&&posy<772){
+      //auf den previous Button geklickt
       System.out.println("previous");
     }else if(me.getClickCount()>1){
-      
+      //Doppelklick
     } // end of if
   } 
   
