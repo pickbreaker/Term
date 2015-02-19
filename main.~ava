@@ -25,6 +25,9 @@ public class main extends Frame implements MouseListener{
   private String MONAT3="Mai";
   private String MONAT4="Juni";
   private Jahr[] Jahre=new Jahr[1];
+  private int pointerj=0;
+  private int pointerm=8;
+  private boolean wait;
   // Ende Attribute
   
   public main(String title) { 
@@ -49,6 +52,7 @@ public class main extends Frame implements MouseListener{
     bild = new BufferedImage(d.width,d.height,BufferedImage.TYPE_INT_RGB);
     MausX = 0;
     MausY = 0;
+    Jahre[0]= new Jahr(false);
     // Anfang Komponenten
     
     // Ende Komponenten
@@ -56,6 +60,9 @@ public class main extends Frame implements MouseListener{
     setVisible(true);
   } // end of public main
   public void paint(Graphics g){
+    while (wait) { 
+      
+    } // end of while
     //Puffergrafik laden
     Graphics h = bild.getGraphics();
     //Hintergrund leeren
@@ -63,10 +70,10 @@ public class main extends Frame implements MouseListener{
     h.fillRect(0,0,this.getWidth()-1,this.getHeight()-1);
     try{
       //externe Grafiken laden
-      Image img1 = ImageIO.read(new File("C:\\Dokumente und Einstellungen\\THG\\Eigene Dateien\\Downloads\\Term-master\\Term-master\\backx.jpg"));
-      Image img2 = ImageIO.read(new File("C:\\Dokumente und Einstellungen\\THG\\Eigene Dateien\\Downloads\\Term-master\\Term-master\\next.png"));
-      Image img3 = ImageIO.read(new File("C:\\Dokumente und Einstellungen\\THG\\Eigene Dateien\\Downloads\\Term-master\\Term-master\\plus.png"));
-      Image img4 = ImageIO.read(new File("C:\\Dokumente und Einstellungen\\THG\\Eigene Dateien\\Downloads\\Term-master\\Term-master\\previous.png"));
+      Image img1 = ImageIO.read(new File("C:\\Users\\Benedikt\\Documents\\GitHub\\Term\\Term\\backx.jpg"));
+      Image img2 = ImageIO.read(new File("C:\\Users\\Benedikt\\Documents\\GitHub\\Term\\Term\\next.png"));
+      Image img3 = ImageIO.read(new File("C:\\Users\\Benedikt\\Documents\\GitHub\\Term\\Term\\plus.png"));
+      Image img4 = ImageIO.read(new File("C:\\Users\\Benedikt\\Documents\\GitHub\\Term\\Term\\previous.png"));
       //System.out.println(img1.toString());
       //System.out.println(img2.toString());
       //System.out.println(img3.toString());
@@ -81,12 +88,30 @@ public class main extends Frame implements MouseListener{
       h.drawImage(img4,150,750,20,20,this);
       h.drawRect(148,748,24,24);
       h.setFont(new Font("Calibri",10,50));
-      h.drawString(JAHR,450,65);
+      h.drawString(pointerj+2015+"",450,65);
       h.setFont(new Font("Calibri",10,20));
-      h.drawString(MONAT1,185,80);
-      h.drawString(MONAT2,385,80);
-      h.drawString(MONAT3,585,80);
-      h.drawString(MONAT4,785,80);
+      if (pointerm>11) {
+        h.drawString(Jahre[pointerj+1].Monate[pointerm%12].getName(),185,80);
+      }else{
+        h.drawString(Jahre[pointerj].Monate[pointerm].getName(),185,80);
+      } // end of if
+      if (pointerm+1>11) {
+        h.drawString(Jahre[pointerj+1].Monate[(pointerm+1)%12].getName(),385,80);
+      }else{
+        h.drawString(Jahre[pointerj].Monate[pointerm+1].getName(),385,80);
+      }// end of if
+      if (pointerm+2>11) {
+        h.drawString(Jahre[pointerj+1].Monate[(pointerm+2)%12].getName(),585,80); 
+      }else{
+        h.drawString(Jahre[pointerj].Monate[pointerm+2].getName(),585,80);
+      } // end of if
+      if (pointerm+3>11) {
+        //System.out.println(Jahre[pointerj+1].toString()); 
+        h.drawString(Jahre[pointerj+1].Monate[(pointerm+3)%12].getName(),785,80);
+      }else{
+        h.drawString(Jahre[pointerj].Monate[pointerm+3].getName(),785,80);
+      } // end of if
+      
     }catch (IOException ex){
       //Ladefehler abfangen
       System.out.println(ex);
@@ -131,7 +156,42 @@ public class main extends Frame implements MouseListener{
     //System.out.println(posx+" x, "+posy+" y.");
     if (posx>248&&posx<272&&posy>748&&posy<772) {
       //auf den next Button geklickt
-      System.out.println("next");
+      //System.out.println("next");
+      //paint warten lassen
+      wait=true;
+      try{
+        //übetreten der Jahresgrenze überprüfen
+        if (((pointerm+3)-((pointerm+3)%12))/pointerm>Jahre.length-1||!(((pointerm+1)-((pointerm+1)%12))==0)) {
+          //System.out.println("1");
+          //Jahre um ein weiteres Jahr verlängern
+          Jahr[] pivot;
+          pivot=Jahre;
+          Jahre=new Jahr[Jahre.length+1];
+          for (int i=0;i<pivot.length;i++) {
+            Jahre[i]=pivot[i];
+          } // end of for
+          //überprüfen ob neues Jahr ein Schaltjahr ist
+          if (Jahre.length-1%400==0){
+            Jahre[Jahre.length-1]=new Jahr(true);
+          }else if (Jahre.length-1%100==0){
+            Jahre[Jahre.length-1]=new Jahr(false);
+          }else if (Jahre.length-1%4==0){
+            Jahre[Jahre.length-1]=new Jahr(true);
+          }else{
+            Jahre[Jahre.length-1]=new Jahr(false);
+          }// end of if
+          //nächten Monat anzeigen
+          pointerm++;
+        }else{
+          //nächsten Monat anzeigen
+          pointerm++;
+        } // end of if
+      }catch (ArithmeticException aex){
+        //falls pointerm = 0 also division durch null
+        pointerm++;
+      }
+      //Grafik freigeben
+      wait=false;
     }else if(posx>198&&posx<222&&posy>748&&posy<772){
       //auf den plus Button geklickt
       System.out.println("plus");

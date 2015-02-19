@@ -70,7 +70,7 @@ public class Liste {
       //Objekt zurückgeben
       t=list.getNodeAt(j,list.getFirstNode());
       //Objekt in bestehende Liste einfügen
-      this.addNode(t.getContent,this.getNodeAt(count-1,firstNode),0);
+      this.addNode(t.getContent(),this.getNodeAt(count-1,firstNode),0);
     } // end of for
   }
   // Ende Methoden

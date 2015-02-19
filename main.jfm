@@ -4,7 +4,7 @@ object main: TFGUIFormular
   BorderIcons = []
   Caption = 'main'
   ClientHeight = 508
-  ClientWidth = 1284
+  ClientWidth = 1355
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,6 @@ object main: TFGUIFormular
   Position = poDesigned
   ShowHint = True
   Visible = True
-  WindowState = wsMaximized
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnResize = FormResize
