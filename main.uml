@@ -1,15 +1,26 @@
 [Files]
-File0=Jahr.java
-File1=Liste.java
-File2=main.java
-File3=Monat.java
-File4=Node.java
-File5=Tag.java
-File6=Termin.java
+File0=fenster.java
+File1=Jahr.java
+File2=Liste.java
+File3=main.java
+File4=Monat.java
+File5=Node.java
+File6=Tag.java
+File7=Termin.java
+
+[Box:  - fenster]
+X=2630
+Y=29
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
 
 [Box:  - Jahr]
-X=477
-Y=203
+X=1899
+Y=40
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -18,8 +29,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Liste]
-X=719
-Y=197
+X=1124
+Y=40
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -28,8 +39,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - main]
-X=20
-Y=27
+X=2239
+Y=19
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -38,8 +49,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Monat]
-X=476
-Y=42
+X=1655
+Y=40
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -48,8 +59,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Node]
-X=1078
-Y=228
+X=890
+Y=40
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -58,8 +69,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Tag]
-X=786
-Y=33
+X=1459
+Y=40
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -68,8 +79,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Termin]
-X=1372
-Y=162
+X=363
+Y=40
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -103,8 +114,8 @@ V6=Tag#Liste#AssociationDirected####0#0#0
 I0=
 
 [Window]
-Left=-8
-Top=-30
-Width=1616
-Height=588
+Left=0
+Top=0
+Width=1425
+Height=375
 

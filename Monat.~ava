@@ -39,6 +39,10 @@ public class Monat {
     //Monatsname zurückgeben
      return name;
     }
+    
+    public void addTermin(Termin term,int day){
+      Tage[day].addTermin(term);
+    }
   
   // Ende Methoden
 } // end of Monat

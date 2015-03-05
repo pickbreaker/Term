@@ -53,4 +53,7 @@ public class Jahr {
      return Monate[1].getName();
     }
   // Ende Methoden
+  public void addTermin(Termin term,int month,int day){
+     Monate[month].addTermin(term,day);
+    }
 } // end of Jahr

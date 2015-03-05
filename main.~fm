@@ -3,8 +3,8 @@ object main: TFGUIFormular
   Top = 0
   BorderIcons = []
   Caption = 'main'
-  ClientHeight = 508
-  ClientWidth = 1355
+  ClientHeight = 762
+  ClientWidth = 984
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

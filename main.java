@@ -4,6 +4,7 @@ import java.awt.image.*;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.*;
 /**
   *
   * Beschreibung
@@ -19,14 +20,9 @@ public class main extends Frame implements MouseListener{
   int hoehe, breite;
   private int TAB_BREITE=200;
   private int TAB_HOEHE=20;
-  private String JAHR="2015";
-  private String MONAT1="März";
-  private String MONAT2="April";
-  private String MONAT3="Mai";
-  private String MONAT4="Juni";
   private Jahr[] Jahre=new Jahr[1];
   private int pointerj=0;
-  private int pointerm=8;
+  private int pointerm=0;
   private boolean wait;
   // Ende Attribute
   
@@ -88,7 +84,7 @@ public class main extends Frame implements MouseListener{
       h.drawImage(img4,150,750,20,20,this);
       h.drawRect(148,748,24,24);
       h.setFont(new Font("Calibri",10,50));
-      h.drawString(pointerj+2015+"",450,65);
+      h.drawString((pointerj+2015)+"",450,65);
       h.setFont(new Font("Calibri",10,20));
       if (pointerm>11) {
         h.drawString(Jahre[pointerj+1].Monate[pointerm%12].getName(),185,80);
@@ -106,7 +102,7 @@ public class main extends Frame implements MouseListener{
         h.drawString(Jahre[pointerj].Monate[pointerm+2].getName(),585,80);
       } // end of if
       if (pointerm+3>11) {
-        //System.out.println(Jahre[pointerj+1].toString()); 
+        //        System.out.println(Jahre[pointerj+1].toString()); 
         h.drawString(Jahre[pointerj+1].Monate[(pointerm+3)%12].getName(),785,80);
       }else{
         h.drawString(Jahre[pointerj].Monate[pointerm+3].getName(),785,80);
@@ -161,7 +157,8 @@ public class main extends Frame implements MouseListener{
       wait=true;
       try{
         //übetreten der Jahresgrenze überprüfen
-        if (((pointerm+3)-((pointerm+3)%12))/pointerm>Jahre.length-1||!(((pointerm+1)-((pointerm+1)%12))==0)) {
+        //System.out.println(""+pointerm);
+        if ((((pointerm+3)-((pointerm+3)%12))/12)+1+pointerj>Jahre.length-1) {
           //System.out.println("1");
           //Jahre um ein weiteres Jahr verlängern
           Jahr[] pivot;
@@ -171,11 +168,11 @@ public class main extends Frame implements MouseListener{
             Jahre[i]=pivot[i];
           } // end of for
           //überprüfen ob neues Jahr ein Schaltjahr ist
-          if (Jahre.length-1%400==0){
-            Jahre[Jahre.length-1]=new Jahr(true);
-          }else if (Jahre.length-1%100==0){
+          if (Jahre.length+2014%400==0){
+            Jahre[Jahre.length+2014]=new Jahr(true);
+          }else if (Jahre.length+2014%100==0){
             Jahre[Jahre.length-1]=new Jahr(false);
-          }else if (Jahre.length-1%4==0){
+          }else if (Jahre.length+2014%4==0){
             Jahre[Jahre.length-1]=new Jahr(true);
           }else{
             Jahre[Jahre.length-1]=new Jahr(false);
@@ -190,14 +187,31 @@ public class main extends Frame implements MouseListener{
         //falls pointerm = 0 also division durch null
         pointerm++;
       }
+      if (pointerm>11) {
+        pointerj++;
+        pointerm=0;
+      } // end of if
       //Grafik freigeben
       wait=false;
     }else if(posx>198&&posx<222&&posy>748&&posy<772){
       //auf den plus Button geklickt
+      
       System.out.println("plus");
     }else if(posx>148&&posx<172&&posy>748&&posy<772){
       //auf den previous Button geklickt
-      System.out.println("previous");
+      //System.out.println("previous");
+      //überprüfen ob array vorne verlassen wird
+      if (pointerm==0&&pointerj==0) {
+        //Fehler-Fenster anzeigen
+        JOptionPane.showMessageDialog(null,"Du kannst vergangene Termine nicht mehr ansehen","Fehler",JOptionPane.INFORMATION_MESSAGE); 
+      }else{
+        if (pointerm==0) {
+          pointerj--;
+          pointerm=11;
+        }else
+        //um einen Monat nach vorne springen
+        pointerm--;
+      } // end of if
     }else if(me.getClickCount()>1){
       //Doppelklick
     } // end of if
@@ -216,6 +230,16 @@ public class main extends Frame implements MouseListener{
   public void mouseReleased(MouseEvent me)
   { 
     
+  }
+  public void getData(){
+    fenster Fenster=new fenster(this,"Termin eintragen",true);
+    int Time=fenster.getTime();
+    Boolean Private=fenster.getPrivate();
+    String Title=fenster.getTitle();
+    String Description=fenster.getDesc();
+    String Place=fenster.getPlace();
+    Termin term=new Termin(Time,Private,Title,Description,Place);
+    Jahre[fenster.getYear()-2015].addTermin(term,fenster.getMonth(),fenster.getDay());
   }
   // Ende Methoden
   
