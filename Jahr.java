@@ -6,7 +6,8 @@
   * @author 
   */
 
-public class Jahr { 
+public class Jahr {
+  
   // Anfang Attribute
   protected Monat[] Monate;
   private int zahl;
@@ -46,12 +47,13 @@ public class Jahr {
     Monate[10].setName("November");
     Monate[11].setName("Dezember");
   }
+  
   // Anfang Methoden
   public String toString(){
      return Monate[1].getName();
     }
   // Ende Methoden
   public void addTermin(Termin term,int month,int day){
-     Monate[month-1].addTermin(term,day);
+     Monate[month].addTermin(term,day);
     }
 } // end of Jahr

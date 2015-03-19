@@ -24,7 +24,7 @@ public class Tag {
   }
 
   public Tag() {
-    this.Termine = new Liste();
+    this.Termine = null;
   }
 
   public void removeTermin(int count) {

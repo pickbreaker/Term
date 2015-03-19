@@ -6,19 +6,16 @@
   * @author 
   */
 
-public class Monat { 
+public class Monat {
+  
   // Anfang Attribute
-  protected Tag[] Tage;
+  private Tag[] Tage;
   private int zahl;
   private String name;
   // Ende Attribute
   
-  public Monat(int count) {
-    this.Tage = new Tag[count];
-    for (int i=0;i<count;i++) {
-      Tage[i]=new Tag();
-    } // end of for
-    this.zahl=count;
+  public Monat(int zahl) {
+    this.Tage = new Tag[zahl];
   }
   
   // Anfang Methoden
@@ -32,19 +29,19 @@ public class Monat {
     } // end of for
     return list;
   }
+  
   public void setName(String title){
     //Monatsname setzen
     this.name=title;
     }
+    
     public String getName(){
     //Monatsname zurückgeben
      return name;
     }
-     public int duration(){
-      return zahl;
-     }
+    
     public void addTermin(Termin term,int day){
-      Tage[day-1].addTermin(term);
+      Tage[day].addTermin(term);
     }
   
   // Ende Methoden

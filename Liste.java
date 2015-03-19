@@ -33,11 +33,9 @@ public class Liste {
       //Spezialfall: Es besteht noch kein Termin
       firstNode=new Node(term,myNode.getNextNode());
       myNode.setNextNode(firstNode);
-      count++;
     }else if(!(zähl==count)) {
       //Ans Ende gehen
       addNode(term,myNode.getNextNode(),zähl+1);
-      count++;
     }else{
       //Termin am Ende hinzufügen
       myNode.setNextNode(new Node(term,myNode.getNextNode()));
@@ -75,12 +73,5 @@ public class Liste {
       this.addNode(t.getContent(),this.getNodeAt(count-1,firstNode),0);
     } // end of for
   }
-  public Termin[] toTerminArrray(){
-     Termin[] term = new Termin[count];
-     for (int i=0;i<count;i++) {
-       term[i]=getNodeAt(i,firstNode).getContent();
-     } // end of for
-     return term;
-    }
   // Ende Methoden
 } // end of Liste

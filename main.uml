@@ -1,27 +1,16 @@
 [Files]
-File0=Details.java
-File1=fenster.java
-File2=Jahr.java
-File3=Liste.java
-File4=main.java
-File5=Monat.java
-File6=Node.java
-File7=Tag.java
-File8=Termin.java
-
-[Box:  - Details]
-X=947
-Y=462
-MinVis=0
-ShowParameter=4
-SortOrder=0
-ShowIcons=0
-FontSize=10
-FontName=MS Sans Serif
+File0=fenster.java
+File1=Jahr.java
+File2=Liste.java
+File3=main.java
+File4=Monat.java
+File5=Node.java
+File6=Tag.java
+File7=Termin.java
 
 [Box:  - fenster]
-X=459
-Y=433
+X=2630
+Y=29
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -30,8 +19,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Jahr]
-X=1707
-Y=44
+X=1899
+Y=40
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -40,7 +29,7 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Liste]
-X=1150
+X=1124
 Y=40
 MinVis=0
 ShowParameter=4
@@ -50,8 +39,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - main]
-X=1658
-Y=401
+X=2239
+Y=19
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -60,8 +49,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Monat]
-X=1417
-Y=406
+X=1655
+Y=40
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -70,7 +59,7 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Node]
-X=916
+X=890
 Y=40
 MinVis=0
 ShowParameter=4
@@ -80,7 +69,7 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Tag]
-X=1485
+X=1459
 Y=40
 MinVis=0
 ShowParameter=4
@@ -90,7 +79,7 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Termin]
-X=437
+X=363
 Y=40
 MinVis=0
 ShowParameter=4
@@ -113,21 +102,20 @@ Fontsize=10
 ShowObjectDiagram=0
 
 [Connections]
-V0=fenster#Termin#Aggregation####0#0#0
-V1=Jahr#Monat#Aggregation####0#0#0
-V2=Liste#Node#AssociationDirected####0#0#0
-V3=main#Jahr#Aggregation####0#0#0
-V4=Monat#Tag#Aggregation####0#0#0
-V5=Node#Termin#AssociationDirected####0#0#0
-V6=Node#Node#AssociationDirected####1#0#0
-V7=Tag#Liste#AssociationDirected####0#0#0
+V0=Jahr#Monat#Aggregation####0#0#0
+V1=Liste#Node#AssociationDirected####0#0#0
+V2=main#Jahr#Aggregation####0#0#0
+V3=Monat#Tag#Aggregation####0#0#0
+V4=Node#Termin#AssociationDirected####0#0#0
+V5=Node#Node#AssociationDirected####1#0#0
+V6=Tag#Liste#AssociationDirected####0#0#0
 
 [Interactive]
 I0=
 
 [Window]
-Left=-8
-Top=-30
-Width=1616
-Height=588
+Left=0
+Top=0
+Width=1425
+Height=375
 
