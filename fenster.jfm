@@ -1,10 +1,10 @@
 object fenster: TFGUIFormular
-  Left = 679
-  Top = 105
+  Left = 0
+  Top = 0
   BorderIcons = []
   Caption = 'C:\Users\Benedikt\Documents\GitHub\Term\Term\fenster.jfm'
-  ClientHeight = 192
-  ClientWidth = 484
+  ClientHeight = 229
+  ClientWidth = 331
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -25,176 +25,6 @@ object fenster: TFGUIFormular
   Background = clWhite
   PixelsPerInch = 96
   TextHeight = 13
-  object textField1: TATextField
-    Tag = -2
-    Left = 16
-    Top = 40
-    Width = 209
-    Height = 25
-    Cursor = crIBeam
-    Hint = 'textField1'
-    Foreground = 3355443
-    Background = clWhite
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Dialog'
-    Font.Style = []
-    Editable = True
-  end
-  object label1: TALabel
-    Tag = -1
-    Left = 16
-    Top = 16
-    Width = 110
-    Height = 20
-    Hint = 'label1'
-    Foreground = 3355443
-    Background = clBtnFace
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Dialog'
-    Font.Style = []
-    Alignment = LEFT
-    Text = 'Titel'
-  end
-  object textField2: TATextField
-    Tag = -2
-    Left = 16
-    Top = 96
-    Width = 209
-    Height = 25
-    Cursor = crIBeam
-    Hint = 'textField2'
-    Foreground = 3355443
-    Background = clWhite
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Dialog'
-    Font.Style = []
-    Editable = True
-  end
-  object label2: TALabel
-    Tag = -1
-    Left = 16
-    Top = 72
-    Width = 110
-    Height = 20
-    Hint = 'label2'
-    Foreground = 3355443
-    Background = clBtnFace
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Dialog'
-    Font.Style = []
-    Alignment = LEFT
-    Text = 'Ort'
-  end
-  object numberField1: TANumberField
-    Tag = -21
-    Left = 272
-    Top = 40
-    Width = 33
-    Height = 25
-    Cursor = crIBeam
-    Hint = 'numberField1'
-    Foreground = 3355443
-    Background = clWhite
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Dialog'
-    Font.Style = []
-    Editable = True
-  end
-  object numberField2: TANumberField
-    Tag = -21
-    Left = 320
-    Top = 40
-    Width = 33
-    Height = 25
-    Cursor = crIBeam
-    Hint = 'numberField2'
-    Foreground = 3355443
-    Background = clWhite
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Dialog'
-    Font.Style = []
-    Editable = True
-  end
-  object numberField3: TANumberField
-    Tag = -21
-    Left = 368
-    Top = 40
-    Width = 57
-    Height = 25
-    Cursor = crIBeam
-    Hint = 'numberField3'
-    Foreground = 3355443
-    Background = clWhite
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Dialog'
-    Font.Style = []
-    Editable = True
-  end
-  object label3: TALabel
-    Tag = -1
-    Left = 272
-    Top = 16
-    Width = 110
-    Height = 20
-    Hint = 'label3'
-    Foreground = 3355443
-    Background = clBtnFace
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Dialog'
-    Font.Style = []
-    Alignment = LEFT
-    Text = 'Datum'
-  end
-  object label4: TALabel
-    Tag = -1
-    Left = 272
-    Top = 72
-    Width = 110
-    Height = 20
-    Hint = 'label4'
-    Foreground = 3355443
-    Background = clBtnFace
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Dialog'
-    Font.Style = []
-    Alignment = LEFT
-    Text = 'Uhrzeit'
-  end
-  object numberField4: TANumberField
-    Tag = -21
-    Left = 272
-    Top = 96
-    Width = 33
-    Height = 25
-    Cursor = crIBeam
-    Hint = 'numberField4'
-    Foreground = 3355443
-    Background = clWhite
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Dialog'
-    Font.Style = []
-    Editable = True
-  end
   object label5: TALabel
     Tag = -1
     Left = 312
@@ -212,14 +42,13 @@ object fenster: TFGUIFormular
     Alignment = LEFT
     Text = ':'
   end
-  object numberField5: TANumberField
-    Tag = -21
-    Left = 328
-    Top = 96
-    Width = 33
-    Height = 25
-    Cursor = crIBeam
-    Hint = 'numberField5'
+  object list1: TAList
+    Tag = -8
+    Left = 32
+    Top = 24
+    Width = 121
+    Height = 177
+    Hint = 'list1'
     Foreground = 3355443
     Background = clWhite
     Font.Charset = DEFAULT_CHARSET
@@ -227,23 +56,40 @@ object fenster: TFGUIFormular
     Font.Height = -12
     Font.Name = 'Dialog'
     Font.Style = []
-    Editable = True
+    SelectedIndex = -1
   end
-  object checkbox1: TACheckBox
-    Tag = -5
-    Left = 400
-    Top = 96
-    Width = 57
-    Height = 25
-    Hint = 'checkbox1'
-    Foreground = 3355443
-    Background = clBtnFace
+  object button1: TAButton
+    Tag = -4
+    Left = 208
+    Top = 56
+    Width = 81
+    Height = 33
+    Hint = 'button1'
+    Foreground = clBlack
+    Background = 15658734
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Dialog'
     Font.Style = []
-    State = False
-    Text = 'Privat'
+    Text = 'Detail'
+    actionPerformed = 'button1_ActionPerformed'
+  end
+  object button2: TAButton
+    Tag = -4
+    Left = 208
+    Top = 128
+    Width = 81
+    Height = 33
+    Hint = 'button2'
+    Foreground = clBlack
+    Background = 15658734
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Dialog'
+    Font.Style = []
+    Text = 'OK'
+    actionPerformed = 'button2_ActionPerformed'
   end
 end

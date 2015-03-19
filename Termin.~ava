@@ -17,11 +17,11 @@ public class Termin {
   // Ende Attribute
   
   public Termin(int start, boolean priv, String head, String description, String plc) {
-    this.startTime = 0;
-    this.privat = false;
-    this.title = "";
-    this.desc = "";
-    this.place = "";
+    this.startTime = start;
+    this.privat = priv;
+    this.title = head;
+    this.desc = description;
+    this.place = plc;
   }
 
   // Anfang Methoden

@@ -1,10 +1,10 @@
-object frame: TFGUIFormular
-  Left = 679
-  Top = 105
+object fenster: TFGUIFormular
+  Left = 5
+  Top = 52
   BorderIcons = []
   Caption = 'C:\Users\Benedikt\Documents\GitHub\Term\Term\fenster.jfm'
-  ClientHeight = 136
-  ClientWidth = 471
+  ClientHeight = 192
+  ClientWidth = 484
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,6 +14,7 @@ object frame: TFGUIFormular
   FormStyle = fsMDIChild
   OldCreateOrder = True
   Position = poDesigned
+  ShowHint = True
   Visible = True
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
@@ -244,5 +245,22 @@ object frame: TFGUIFormular
     Font.Style = []
     State = False
     Text = 'Privat'
+  end
+  object button1: TAButton
+    Tag = -4
+    Left = 200
+    Top = 144
+    Width = 65
+    Height = 33
+    Hint = 'button1'
+    Foreground = clBlack
+    Background = 15658734
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Dialog'
+    Font.Style = []
+    Text = 'OK'
+    actionPerformed = 'button1_ActionPerformed'
   end
 end
